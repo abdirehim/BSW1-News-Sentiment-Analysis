@@ -25,3 +25,12 @@ notebooks/*.png
 # Ignore tracked files if any remain (optional, but usually redundant)
 *.pyc
 *.pyo
+
+__pycache__/
+.ipynb_checkpoints/
+.env
+*.pyc
+*.pyo
+*.pyd
+*.DS_Store
+venv/
