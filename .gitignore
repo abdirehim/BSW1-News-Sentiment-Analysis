@@ -3,3 +3,25 @@ __pycache__/
 *.pyc
 *.log
 .DS_Store
+
+#Virtual environment folder
+venv/
+
+# Python cache
+__pycache__/
+
+# Jupyter Notebook checkpoints
+*.ipynb_checkpoints
+**/.ipynb_checkpoints/
+
+# Data files
+data/
+*.csv
+data/*.csv
+
+# Notebook output images
+notebooks/*.png
+
+# Ignore tracked files if any remain (optional, but usually redundant)
+*.pyc
+*.pyo
