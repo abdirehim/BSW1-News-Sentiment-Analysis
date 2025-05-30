@@ -8,4 +8,5 @@ yfinance
 pynance
 TA-Lib
 scikit-learn
-jupyter
+
+
