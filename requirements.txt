@@ -6,7 +6,6 @@ nltk
 textblob
 yfinance
 pynance
-TA-Lib
+# TA-Lib
 scikit-learn
-
 
