@@ -1,36 +1,33 @@
-# scripts/visualization.py — Plot MA20, RSI, MACD
-# 🎯 Goal:
-# Use matplotlib to generate:
-
-# Line chart of Close vs MA20
-
-# RSI chart with overbought/oversold zones
-
-# MACD + Signal Line + Histogram
-
-# scripts/visualization.py
+# ✅ scripts/visualization.py
+# Plot MA20, RSI, MACD to output/project-root level
 
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.use('Agg')  # Use non-GUI backend to avoid display errors
+matplotlib.use('Agg')  # Ensure headless environments won't break
 
 import pandas as pd
 import os
 
 def plot_ma(df: pd.DataFrame, ticker: str, output_dir: str = "output"):
+    os.makedirs(output_dir, exist_ok=True)
+    save_path = os.path.join(output_dir, f"{ticker}_ma_plot.png")
+    print(f"📤 Saving MA plot: {save_path}")
     plt.figure(figsize=(12, 5))
     plt.plot(df['Close'], label='Close Price', color='blue')
     plt.plot(df['MA20'], label='20-Day MA', linestyle='--', color='orange')
-    plt.title(f"{ticker} - Close Price vs 20-Day Moving Average")
+    plt.title(f"{ticker} - Close Price vs 20-Day MA")
     plt.xlabel("Date")
     plt.ylabel("Price")
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, f"{ticker}_ma_plot.png"))
+    plt.savefig(save_path)
     plt.close()
 
 def plot_rsi(df: pd.DataFrame, ticker: str, output_dir: str = "output"):
+    os.makedirs(output_dir, exist_ok=True)
+    save_path = os.path.join(output_dir, f"{ticker}_rsi_plot.png")
+    print(f"📤 Saving RSI plot: {save_path}")
     plt.figure(figsize=(12, 4))
     plt.plot(df['RSI14'], label='RSI14', color='purple')
     plt.axhline(y=70, color='red', linestyle='--', label='Overbought (70)')
@@ -41,10 +38,13 @@ def plot_rsi(df: pd.DataFrame, ticker: str, output_dir: str = "output"):
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, f"{ticker}_rsi_plot.png"))
+    plt.savefig(save_path)
     plt.close()
 
 def plot_macd(df: pd.DataFrame, ticker: str, output_dir: str = "output"):
+    os.makedirs(output_dir, exist_ok=True)
+    save_path = os.path.join(output_dir, f"{ticker}_macd_plot.png")
+    print(f"📤 Saving MACD plot: {save_path}")
     plt.figure(figsize=(12, 5))
     plt.plot(df['MACD'], label='MACD', color='blue')
     plt.plot(df['MACD_signal'], label='Signal Line', color='orange')
@@ -54,5 +54,6 @@ def plot_macd(df: pd.DataFrame, ticker: str, output_dir: str = "output"):
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, f"{ticker}_macd_plot.png"))
+    plt.savefig(save_path)
     plt.close()
+   
