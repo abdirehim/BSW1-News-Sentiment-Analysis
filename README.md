@@ -6,7 +6,7 @@ The **BSW1-News-Sentiment-Analysis** project, commissioned by Nova Financial Sol
 
 - **Task 1: Exploratory Data Analysis (EDA)** - Conducted a comprehensive analysis of the FNSPID dataset, uncovering patterns in headline lengths, sentiment distributions, publication trends, and publisher biases.
 - **Task 2: Quantitative Analysis** - Performed stock price analysis for multiple tickers (AAPL, GOOG, AMZN, MSFT, TSLA, NVDA, META) using technical indicators (MA20, RSI, MACD) and custom financial metrics (Sharpe Ratio, Volatility), with visualizations to highlight sector dynamics.
-- **Task 3: Sentiment and Stock Returns Correlation** - Initiated correlation analysis between news sentiment and daily stock returns, starting with a subset of tickers (AAPL, AMZN, GOOG) over select days in June 2020.
+- **Task 3: Sentiment and Stock Returns Correlation** - perforemed correlation analysis between news sentiment and daily stock returns, starting with a subset of tickers (AAPL, AMZN, GOOG) over select days in June 2020.
 
 This repository contains all code, scripts, and reports generated during Week 1, with an interim report . The project leverages Python 3.12, pandas, NumPy, NLTK, TextBlob, yfinance, TA-Lib, and matplotlib for data analysis, visualization, and modeling.
 
